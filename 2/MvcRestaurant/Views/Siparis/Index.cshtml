@@ -1,0 +1,32 @@
+﻿@using MvcRestaurant.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Rezervasyon İptali</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem ID</th>
+        <th>Yemek</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Sipariş Tarihi</th>
+        <th>Masa No</th>
+        <th>Kisi Sayisi</th>
+        <th>Rezervasyon iptali</th>
+    </tr>
+    @foreach (var Uye in Model)
+    {
+        <tr>
+            <th>@Uye.ID</th>
+            <th>@Uye.YEMEK</th>
+            <th>@Uye.UYE</th>
+            <th>@Uye.PERSONEL</th>
+            <th>@Uye.SIPARISTAHi</th>
+            <th>@Uye.MasaNo</th>
+            <th>@Uye.KisiSayisi</th>
+            <th><a href="/Siparis/Siparisiptal/@Uye.ID" class="btn btn-default" style="background-color:#4cff00">Rezarvasyonu iptal et</a></th>
+        </tr>
+    }
+</table>
